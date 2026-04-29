@@ -1,0 +1,287 @@
+VR4     = r8
+VR14    = rbx
+VR9     = r13
+VR0     = rflags
+VR19    = rax
+VR20    = rcx
+VR7     = Relocation Address
+VR21    = r11
+VR13    = rsi
+VR18    = r15
+VR15    = r14
+VR17    = r10
+VR1     = rdi
+VR5     = rbp
+VR8     = r12
+VR11    = rdx
+VR22    = r9
+
+=================字节码区域[0x1400060f9 - 0x14000651c]=================
+loc_0:                                                          // 首次进入虚拟机
+[0] vPopReg64 VR4; vPopReg64 VR14
+[1] vPopReg64 VR9; vPopReg64 VR0
+[2] vPopReg64 VR19; vPopReg64 VR20
+[3] vPopReg64 VR7; vPopReg64 VR21
+[4] vPopReg64 VR13; vPopReg64 VR18
+[5] vPopReg64 VR15; vPopReg64 VR17
+[6] vPopReg64 VR1; vPopReg64 VR5
+[7] vPopReg64 VR8; vPopReg64 VR11
+[8] vPopReg64 VR22; vPushImm64 0x140001188
+[9] vPushReg64 VR7; vAdd64
+[10] vPopReg64 VR24
+[11] vPushVsp64; vPopReg64 VR25
+[12] vPushReg64 VR5
+[13] vPopReg64 VR26
+[14] vPushReg64 VR13
+[15] vPopReg64 VR27; vPushReg64 VR1
+[16] vPopReg64 VR28; vPushReg64 VR14
+[17] vPopReg64 VR29
+
+[18] vPushImm32 0xdeadbeef
+[19] vPopReg32 VR16
+[20] vPushReg32 VR16; vPushReg32 VR17
+[21] vPopReg32 VR2
+[22] vPushReg32 VR2; vPushReg32 VR2
+[23] vNand32; vAdd32
+[24] vPushVsp64
+[25] vReadMem32; vNand32
+[26] vPopReg32 VR6
+[27] vPushImm64 0x140006176
+[28] vPushImm64 0x1400061f3
+[29] vPushVsp64
+[30] vPushImm16 0x19; vPushImm32 0x0
+[31] vPushImm32 0x7fffffff; vPushReg32 VR6
+[32] vAdd32; vPushReg32 VR6
+[33] vNor32
+[34] vPushImm32 0x80000000; vNand32
+[35] vPushVsp64; vReadMem32
+[36] vNand32
+[37] vShr64; vPopReg64 VR10
+[38] vPushImm16 0x3; vPushReg64 VR10
+[39] vShr64; vPushImm64 0xfffffffffffffff7
+[40] vNor64
+[41] vAdd64; vReadMem64                                         // 得到了下一个新的vpc值
+[42] vPopReg64 VR12; vPopReg64 VR23                             // VR12 = 下一个新的vpc值
+[43] vPopReg64 VR23; vPushReg64 VR12
+[44] vPushReg64 VR7; vAdd64
+[45] vPopReg64 VR12; vPushReg64 VR5
+[46] vPushReg64 VR14
+[47] vPushReg64 VR21; vPushReg64 VR4
+[48] vPushReg64 VR7
+[49] vPushImm16 0x14; vPushImm32 0x0
+[50] vPushReg32 VR2; vPushReg32 VR2
+[51] vNand32; vPushReg32 VR16
+[52] vPushReg32 VR16
+[53] vNor32; vNor32
+[54] vPushReg32 VR2; vPushReg32 VR16
+[55] vNor32; vNor32
+[56] vPushReg32 VR2; vPushReg32 VR2
+[57] vNor32
+[58] vPushReg32 VR6; vPushReg32 VR6
+[59] vNor32; vNor32
+[60] vPushReg32 VR2; vPushReg32 VR6
+[61] vNor32; vNor32
+[62] vNand32; vPushVsp64
+[63] vReadMem32
+[64] vNor32
+[65] vPushImm32 0x80000000; vNand32
+[66] vPushVsp64; vReadMem32
+[67] vNor32
+[68] vShr64; vPushImm16 0x18                                    // of
+[69] vPushImm32 0x0
+[70] vPushReg32 VR6; vPushImm32 0x80000000
+[71] vNand32; vPushVsp64
+[72] vReadMem32; vNand32
+[73] vShr64; vAdd64                                             // sf
+[74] vPushImm16 0x19; vPushImm32 0x0
+[75] vPushImm32 0x7fffffff; vPushReg32 VR6
+[76] vAdd32; vPushReg32 VR6
+[77] vNor32
+[78] vPushImm32 0x80000000; vNand32
+[79] vPushVsp64; vReadMem32
+[80] vNor32; vShr64
+[81] vAdd64; vPushImm32 0x0                                     // zf
+[82] vPushReg32 VR2; vPushReg32 VR2
+[83] vNand32; vPushReg32 VR16
+[84] vPushReg32 VR16; vNor32
+[85] vNor32; vPushReg32 VR2
+[86] vPushReg32 VR16; vNor32
+[87] vNor32
+[88] vPopReg32 VR10
+[89] vPushReg32 VR10; vPushReg32 VR10
+[90] vNor32; vPushReg32 VR6
+[91] vPushReg32 VR6
+[92] vNand32; vNor32
+[93] vPushReg32 VR10; vPushReg32 VR6
+[94] vNor32; vNor32
+[95] vPushImm32 0x10
+[96] vNand32; vPushVsp64
+[97] vReadMem32; vNand32
+[98] vAdd64                                                     // af
+[99] vPushImm16 0x4; vPushReg8 VR6               
+[100] vShr8
+[101] vPopReg8 VR10; vPushImm16 0x2
+[102] vPushImm16 0x0; vPushImm32 0x0
+[103] vPushReg8 VR6
+[104] vPushReg8 VR6; vNand8
+[105] vPushReg8 VR10
+[106] vNand8
+[107] vPushReg8 VR6
+[108] vPushReg8 VR10; vPushReg8 VR10
+[109] vNand8; vNand8
+[110] vNand8
+[111] vPushImm16 0xf; vNand16
+[112] vPushVsp64; vReadMem16
+[113] vNor16
+[114] vPushImm16 0x9669; vShr16
+[115] vPushImm16 0x1; vNand16
+[116] vPushVsp64; vReadMem16
+[117] vNor16
+[118] vSal64
+[119] vAdd64                                                    // pf
+[120] vPushImm16 0x1f; vPushImm32 0x0
+[121] vPushReg32 VR2; vPushReg32 VR2
+[122] vNor32; vPushReg32 VR16
+[123] vNand32; vPushVsp64
+[124] vReadMem32; vNor32
+[125] vPushReg32 VR2; vPushReg32 VR16
+[126] vPushReg32 VR16; vNor32
+[127] vNor32; vPushReg32 VR2
+[128] vPushReg32 VR2; vNand32
+[129] vPushReg32 VR16; vNor32
+[130] vNor32; vPushReg32 VR6
+[131] vNand32; vPushVsp64
+[132] vReadMem32; vNand32
+[133] vNor32
+[134] vPushVsp64; vReadMem32
+[135] vNor32
+[136] vPushImm32 0x80000000; vNand32
+[137] vPushVsp64; vReadMem32
+[138] vNand32
+[139] vShr64; vAdd64                                            // cf
+[140] vPushReg64 VR0; vPushImm64 0xfffffffffffff72a
+[141] vNand64
+[142] vPushVsp64
+[143] vReadMem64; vNand64
+[144] vAdd64; vPopReg64 VR23                                    // 给VR23写入新的rflags
+
+[145] vPushReg64 VR23; vPushReg64 VR19
+[146] vPushReg64 VR1; vPushReg64 VR11
+[147] vPushReg64 VR13; vPushReg64 VR18
+[148] vPushReg64 VR9; vPushReg64 VR17
+[149] vPushReg64 VR22; vPushReg64 VR15
+[150] vPushReg64 VR20; vPushReg64 VR8
+[151] vPushReg64 VR12
+[152] vJmp                                                      // 将跳转到 loc_1 或 loc_2
+
+loc_1:                                                          // jne跳转未生效，是0xdeadbeef
+[153] vPopReg64 VR0; vPopReg64 VR20
+[154] vPopReg64 VR8; vPopReg64 VR15
+[155] vPopReg64 VR3; vPopReg64 VR17
+[156] vPopReg64 VR18; vPopReg64 VR22
+[157] vPopReg64 VR9; vPopReg64 VR13
+[158] vPopReg64 VR19; vPopReg64 VR11
+[159] vPopReg64 VR1; vPopReg64 VR4
+[160] vPopReg64 VR23; vPopReg64 VR14
+[161] vPopReg64 VR7; vPushImm64 0x140002534
+[162] vPushReg64 VR1; vAdd64
+[163] vPopReg64 VR12; vPushReg64 VR7
+[164] vPushReg64 VR14; vPushReg64 VR23
+[165] vPushReg64 VR4; vPushReg64 VR1
+[166] vPushReg64 VR11; vPushReg64 VR19
+[167] vPushReg64 VR13; vPushReg64 VR9
+[168] vPushReg64 VR22; vPushReg64 VR18
+[169] vPushReg64 VR17; vPushReg64 VR3
+[170] vPushReg64 VR15; vPushReg64 VR8
+[171] vPushReg64 VR20; vPushReg64 VR0
+[172] vPushReg64 VR12; vJmp                                     // 将跳转到 loc_3
+
+loc_2:                                                          // jne跳转已生效，不是0xdeadbeef
+[173] vPopReg64 VR5; vPopReg64 VR20
+[174] vPopReg64 VR8; vPopReg64 VR21
+[175] vPopReg64 VR15; vPopReg64 VR17
+[176] vPopReg64 VR3; vPopReg64 VR0
+[177] vPopReg64 VR22; vPopReg64 VR18
+[178] vPopReg64 VR13; vPopReg64 VR11
+[179] vPopReg64 VR9; vPopReg64 VR19
+[180] vPopReg64 VR23; vPopReg64 VR4
+[181] vPopReg64 VR1; vPushImm64 0x1400025d1
+[182] vPushReg64 VR9; vAdd64
+[183] vPopReg64 VR14; vPushReg64 VR1
+[184] vPushReg64 VR4; vPushReg64 VR23
+[185] vPushReg64 VR19; vPushReg64 VR9
+[186] vPushReg64 VR11; vPushReg64 VR13
+[187] vPushReg64 VR18; vPushReg64 VR22
+[188] vPushReg64 VR0; vPushReg64 VR3
+[189] vPushReg64 VR17; vPushReg64 VR15
+[190] vPushReg64 VR21; vPushReg64 VR8
+[191] vPushReg64 VR20; vPushReg64 VR5
+[192] vPushReg64 VR14; vJmp                                     // 将跳转到 loc_4
+
+=================字节码区域[0x140002534 - 0x14000265f]=================
+loc_3:
+[193] vPopReg64 VR20
+[194] vPopReg64 VR9; vPopReg64 VR12
+[195] vPopReg64 VR18
+[196] vPopReg64 VR19; vPopReg64 VR4
+[197] vPopReg64 VR6; vPopReg64 VR10
+[198] vPopReg64 VR15; vPopReg64 VR3
+[199] vPopReg64 VR7; vPopReg64 VR17
+[200] vPopReg64 VR22; vPopReg64 VR1
+[201] vPopReg64 VR21; vPopReg64 VR8
+[202] vPopReg64 VR11; vPushImm64 140001188
+[203] vPushReg64 VR22
+[204] vAdd64; vPopReg64 VR24
+[205] vPushImm64 0xdeadbeef
+[206] vPopReg64 VR0; vPushImm64 0x1615d9430
+[207] vPopReg64 VR23
+[208] vPushReg64 VR11
+[209] vPushReg64 VR8; vPushReg64 VR21
+[210] vPushReg64 VR1; vPushReg64 VR22
+[211] vPushReg64 VR17; vPushReg64 VR0
+[212] vPushReg64 VR3; vPushReg64 VR15
+[213] vPushReg64 VR10; vPushReg64 VR6
+[214] vPushReg64 VR4; vPushReg64 VR19
+[215] vPushReg64 VR18; vPushReg64 VR12
+[216] vPushReg64 VR9; vPushReg64 VR20
+[217] vNop
+
+loc_4:
+[218] vPopReg64 VR14; vPopReg64 VR7
+[219] vPopReg64 VR16; vPopReg64 VR23
+[220] vPopReg64 VR20; vPopReg64 VR13
+[221] vPopReg64 VR18; vPopReg64 VR19
+[222] vPopReg64 VR10; vPopReg64 VR12
+[223] vPopReg64 VR15; vPopReg64 VR3
+[224] vPopReg64 VR4; vPopReg64 VR17
+[225] vPopReg64 VR2; vPopReg64 VR8
+[226] vPopReg64 VR5; vPushImm64 0x140001188
+[227] vPushReg64 VR4; vAdd64
+[228] vPopReg64 VR24; vPushImm64 0x1400011c0
+[229] vPushReg64 VR4; vAdd64
+[230] vPushReg64 VR23; vPushReg64 VR7
+[231] vPushReg64 VR2; vPushReg64 VR19
+[232] vPushReg64 VR14; vPushReg64 VR8
+[233] vPushReg64 VR20; vPushReg64 VR13
+[234] vPushReg64 VR17; vPushReg64 VR10
+[235] vPushReg64 VR12; vPushReg64 VR16
+[236] vPushReg64 VR5; vPushReg64 VR15
+[237] vPushReg64 VR3; vPushReg64 VR18
+[238] vExit
+
+r15 = VR18
+rflags = VR3
+rax = VR15
+rbp = VR5
+r14 = VR16
+rdi = VR12
+rdx = VR10
+r8 = VR17
+r13 = VR13
+r10 = VR20
+rbx = VR8
+r12 = VR14
+rsi = VR19
+r11 = VR2
+rcx = VR7
+r9 = VR23
